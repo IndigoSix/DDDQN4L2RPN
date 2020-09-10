@@ -111,11 +111,12 @@ class gen_actions_generator():
             pre_gen_p = np.array(gen_p) + act
             overflow = 1
 
+        # TODO 发电机功率变化和应为0
         p_ramp = act.tolist()
         for i in sorted(self.del_id, reverse=True):
             del p_ramp[i]
         assert len(self.genid) == len(p_ramp)
         act_value = [(idn, dp) for idn, dp in zip(self.genid, p_ramp)]
-        action = action_space({"redispatch": act_value})
+        action = action_space({"redispatch": act_value})        # 生成操作字典
 
         return action, overflow
