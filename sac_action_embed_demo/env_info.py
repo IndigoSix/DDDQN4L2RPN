@@ -11,3 +11,8 @@ class Env_Info(object):
         self.SubNum = len(self.env.action_space.sub_info)
         self.ElementNum = np.sum(self.env.action_space.sub_info)
         self.GenRampUp = self.env.action_space.gen_max_ramp_up
+        self.GenRampDown = self.env.action_space.gen_max_ramp_down
+        self.GenRedispable = self.env.action_space.gen_redispatchable
+        self.Gen2Sub = self.env.action_space.gen_to_subid
+        self.gen_p_max = self.env.action_space.gen_pmax
+        self.gen_p_min = self.env.action_space.gen_pmin
